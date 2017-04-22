@@ -3,6 +3,9 @@ package com.ssru.gel1101.gel1101;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
@@ -14,7 +17,7 @@ public class LesSon1 extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lesson1);
 
-        PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
-        photoView.setImageResource(R.drawable.work_ver4_forapp);
+
+
     }
 }

@@ -1,16 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/photo_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType = "centerCrop"
-        android:src="@drawable/work_ver4_forapp"/>
+    <HorizontalScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="1000dp"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
 
-</RelativeLayout>
+                <ImageView
+                    android:id="@+id/ribbon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ribbon" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="1000dp"
+                android:layout_height="250dp"
+                android:background="#000000"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="1000dp"
+                    android:layout_height="250dp"
+                    android:background="#70C1B3"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/first_rib" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="การเขียนผ่านตัวอักษร"
+                                android:textColor="#ffffff"
+                                android:textSize="25dp" />
+
+                            <Button
+                                android:id="@+id/btn1_group1"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent"
+                                android:padding="10dp"
+                                android:text="เลือกรูป"/>
+
+                            <ImageView
+                                android:id="@+id/icon1_group1"
+                                android:visibility="gone"
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="100dp"
+                                android:layout_height="match_parent" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="การพูดผ่านภาษาพูด"
+                                android:textColor="#ffffff"
+                                android:textSize="25dp" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="การเขียนผ่านตัวอักษร"
+                                android:textColor="#ffffff"
+                                android:textSize="25dp" />
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="#B271BF">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="#7734E0">
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="#DB3B65">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+</ScrollView>
