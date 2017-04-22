@@ -69,7 +69,8 @@
                                 android:layout_width="100dp"
                                 android:layout_height="match_parent"
                                 android:padding="10dp"
-                                android:text="เลือกรูป"/>
+                                android:text="เลือกรูป"
+                                android:onClick="PickImage"/>
 
                             <ImageView
                                 android:id="@+id/icon1_group1"
