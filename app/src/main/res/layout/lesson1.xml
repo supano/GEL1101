@@ -19,24 +19,28 @@
                 android:layout_height="100dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/ribbon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ribbon" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ribbon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ribbon" />
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="1000dp"
-                android:layout_height="250dp"
+                android:layout_height="300dp"
                 android:background="#000000"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_weight="2"
                     android:layout_width="1000dp"
-                    android:layout_height="250dp"
+                    android:layout_height="300dp"
                     android:background="#70C1B3"
                     android:orientation="vertical">
 
@@ -139,31 +143,151 @@
                 <LinearLayout
                     android:layout_weight="2"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:background="#B271BF">
+                    android:layout_height="300dp"
+                    android:background="#B271BF"
+                    android:padding="10dp">
+                        <LinearLayout
 
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/second_rib"/>
+                            <LinearLayout
+                                android:paddingLeft="100dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="1. วิเคราะห์"
+                                    android:textSize="25dp"
+                                    android:gravity="center"/>
+                                <EditText
+                                    android:layout_marginLeft="5dp"
+                                    android:paddingTop="5dp"
+                                    android:layout_width="200dp"
+                                    android:layout_height="match_parent"
+                                    android:textSize="25dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:paddingLeft="100dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="2. วิเคราะห์"
+                                    android:textSize="25dp"
+                                    android:gravity="center"/>
+                                <EditText
+                                    android:layout_marginLeft="5dp"
+                                    android:paddingTop="5dp"
+                                    android:layout_width="200dp"
+                                    android:layout_height="match_parent"
+                                    android:textSize="25dp"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                android:paddingLeft="100dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="3. วิเคราะห์โอกาสในการสื่อสาร เช่น การเป็นพิธีกร"
+                                    android:textSize="25dp"
+                                    android:layout_gravity="center_horizontal"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="300dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_weight="2"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:background="#7734E0">
+                    android:layout_height="300dp"
+                    android:layout_weight="2"
+                    android:background="#7734E0"
+                    android:orientation="vertical">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/third_rib"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon1group3"/>
+                    </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_weight="2"
                     android:layout_width="match_parent"
-                    android:layout_height="250dp"
-                    android:background="#DB3B65">
+                    android:layout_height="300dp"
+                    android:paddingLeft="10dp"
+                    android:background="#DB3B65"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/fourth_rib"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/arrow1"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:paddingRight="20dp">
+                            <Button
+                                android:id="@+id/btn1_group4"
+                                android:layout_marginTop="30dp"
+                                android:background="#ffffff"
+                                android:layout_width="250dp"
+                                android:layout_height="30dp" />
+                            <Button
+                                android:layout_marginTop="5dp"
+                                android:background="#ffffff"
+                                android:layout_width="300dp"
+                                android:layout_height="30dp" />
+                            <Button
+                                android:layout_marginTop="5dp"
+                                android:background="#ffffff"
+                                android:layout_width="350dp"
+                                android:layout_height="30dp" />
+                            <Button
+                                android:layout_marginTop="5dp"
+                                android:background="#ffffff"
+                                android:layout_width="400dp"
+                                android:layout_height="30dp" />
+                            <Button
+                                android:layout_marginTop="5dp"
+                                android:background="#ffffff"
+                                android:layout_width="450dp"
+                                android:layout_height="30dp" />
 
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
