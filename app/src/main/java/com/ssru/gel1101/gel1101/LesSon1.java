@@ -21,8 +21,8 @@ import com.github.chrisbanes.photoview.PhotoView;
 
 
 public class LesSon1 extends Activity{
-    ImageView icon1_group1;
-    Button btn1_group1;
+    ImageView icon1_group1,icon2_group1,icon3_group1;
+    Button btn1_group1,btn2_group1,btn3_group1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,11 +30,34 @@ public class LesSon1 extends Activity{
         setContentView(R.layout.lesson1);
 
         icon1_group1 = (ImageView)findViewById(R.id.icon1_group1);
+        icon2_group1 = (ImageView)findViewById(R.id.icon2_group1);
+        icon3_group1 = (ImageView)findViewById(R.id.icon3_group1);
         btn1_group1 = (Button)findViewById(R.id.btn1_group1);
+        btn2_group1 = (Button)findViewById(R.id.btn2_group1);
+        btn3_group1 = (Button)findViewById(R.id.btn3_group1);
+
+        btn1_group1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PickImage1();
+            }
+        });
+        btn2_group1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PickImage2();
+            }
+        });
+        btn2_group1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PickImage3();
+            }
+        });
+
     }
 
-    static final int REQUEST_PICK_PHOTO = 3;
-    public void PickImage(View view) {
+    public void PickImage1() {
         Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
         startCrop.putExtra("aspectX", 0);
@@ -42,20 +65,55 @@ public class LesSon1 extends Activity{
         startCrop.putExtra("outputX", 0);
         startCrop.putExtra("outputY", 0);
         startCrop.putExtra("return-data", true);
-        startActivityForResult(startCrop, REQUEST_PICK_PHOTO);
+        startActivityForResult(startCrop, 1);
+    }
+    public void PickImage2() {
+        Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startCrop.putExtra("crop", "true");
+        startCrop.putExtra("aspectX", 0);
+        startCrop.putExtra("aspectY", 0);
+        startCrop.putExtra("outputX", 0);
+        startCrop.putExtra("outputY", 0);
+        startCrop.putExtra("return-data", true);
+        startActivityForResult(startCrop, 2);
+    }
+    public void PickImage3() {
+        Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startCrop.putExtra("crop", "true");
+        startCrop.putExtra("aspectX", 0);
+        startCrop.putExtra("aspectY", 0);
+        startCrop.putExtra("outputX", 0);
+        startCrop.putExtra("outputY", 0);
+        startCrop.putExtra("return-data", true);
+        startActivityForResult(startCrop, 3);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-       if (requestCode == REQUEST_PICK_PHOTO && resultCode == RESULT_OK && data != null) {
-           Bundle extras = data.getExtras();
-           Bitmap tempbm = extras.getParcelable("data");
-           icon1_group1.setImageBitmap(tempbm);
-           icon1_group1.setVisibility(View.VISIBLE);
-           btn1_group1.setVisibility(View.GONE);
+    protected void onActivityResult(int requestCode,int resultCode, Intent data) {
+        if(data != null) {
+            Bundle extras = data.getExtras();
+            Bitmap tempBitmap = extras.getParcelable("data");
 
-        }else if (requestCode== RESULT_CANCELED){
+            if (requestCode == 1 && resultCode == RESULT_OK ) {
+                icon1_group1.setImageBitmap(tempBitmap);
+                icon1_group1.setVisibility(View.VISIBLE);
+                btn1_group1.setVisibility(View.GONE);
 
+            } else if (requestCode == 2 && resultCode == RESULT_OK) {
+                icon2_group1.setImageBitmap(tempBitmap);
+                icon2_group1.setVisibility(View.VISIBLE);
+                btn2_group1.setVisibility(View.GONE);
+
+            }else if (requestCode == 3 && resultCode == RESULT_OK) {
+                icon3_group1.setImageBitmap(tempBitmap);
+                icon3_group1.setVisibility(View.VISIBLE);
+                btn3_group1.setVisibility(View.GONE);
+
+            }else {
+
+            }
+        }else {
+            //Do not thing when user cancel
         }
 
     }
