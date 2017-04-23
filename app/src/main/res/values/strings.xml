@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GEL1101</string>
+
+    <string-array name="group4choice">
+        <item>ภาษาระดับกันเอง</item>
+        <item>ภาษาระดับไม่เป็นทางการ</item>
+        <item>ภาษาระดับกึ่งทางการ</item>
+        <item>ภาษาระดับทางการ</item>
+        <item>ภาษาระดับพิธีการ</item>
+    </string-array>
+
+</resources>
