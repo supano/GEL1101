@@ -19,28 +19,34 @@ import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Arrays;
 
 
-public class LesSon1 extends Activity {
-    ImageView icon1_group1, icon2_group1, icon3_group1;
-    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4,btn2_group4,btn3_group4,btn4_group4,btn5_group4;
+public class LesSon1 extends Activity implements LoadImageTask.Listener {
+    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3;
+    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lesson1);
 
-
+        //image
         icon1_group1 = (ImageView) findViewById(R.id.icon1_group1);
         icon2_group1 = (ImageView) findViewById(R.id.icon2_group1);
         icon3_group1 = (ImageView) findViewById(R.id.icon3_group1);
+        img1_group3 = (ImageView) findViewById(R.id.img1_group3);
+        //button
         btn1_group1 = (Button) findViewById(R.id.btn1_group1);
         btn2_group1 = (Button) findViewById(R.id.btn2_group1);
         btn3_group1 = (Button) findViewById(R.id.btn3_group1);
@@ -49,6 +55,7 @@ public class LesSon1 extends Activity {
         btn3_group4 = (Button) findViewById(R.id.btn3_group4);
         btn4_group4 = (Button) findViewById(R.id.btn4_group4);
         btn5_group4 = (Button) findViewById(R.id.btn5_group4);
+        btn1_group3 = (Button) findViewById(R.id.btn1_group3);
 
         btn1_group1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +105,12 @@ public class LesSon1 extends Activity {
                 createDialog5();
             }
         });
-
+        btn1_group3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog6();
+            }
+        });
 
     }
 
@@ -293,4 +305,37 @@ public class LesSon1 extends Activity {
         dialog.show();
     }
 
+    public static final String IMAGE_URL = "https://api.learn2crack.com/android/images/donut.png";
+    public void createDialog6() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        final EditText input = new EditText(this);
+        builder.setTitle("ใส่ Link รูปภาพ");
+        builder.setView(input);
+        builder.setPositiveButton("OK", new AlertDialog.OnClickListener() {
+
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String value = input.getText().toString();
+                new LoadImageTask(LesSon1.this).execute(value);
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+
+    @Override
+    public void onImageLoaded(Bitmap bitmap) {
+        img1_group3.setImageBitmap(bitmap);
+        img1_group3.setVisibility(View.VISIBLE);
+        btn1_group3.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onError() {
+
+    }
 }
