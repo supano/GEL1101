@@ -14,6 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
@@ -24,11 +25,12 @@ import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
+import java.util.Arrays;
 
 
-public class LesSon1 extends Activity{
-    ImageView icon1_group1,icon2_group1,icon3_group1;
-    Button btn1_group1,btn2_group1,btn3_group1,btn1_group4;
+public class LesSon1 extends Activity {
+    ImageView icon1_group1, icon2_group1, icon3_group1;
+    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4,btn2_group4,btn3_group4,btn4_group4,btn5_group4;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -36,13 +38,17 @@ public class LesSon1 extends Activity{
         setContentView(R.layout.lesson1);
 
 
-        icon1_group1 = (ImageView)findViewById(R.id.icon1_group1);
-        icon2_group1 = (ImageView)findViewById(R.id.icon2_group1);
-        icon3_group1 = (ImageView)findViewById(R.id.icon3_group1);
-        btn1_group1 = (Button)findViewById(R.id.btn1_group1);
-        btn2_group1 = (Button)findViewById(R.id.btn2_group1);
-        btn3_group1 = (Button)findViewById(R.id.btn3_group1);
-        btn1_group4 = (Button)findViewById(R.id.btn1_group4);
+        icon1_group1 = (ImageView) findViewById(R.id.icon1_group1);
+        icon2_group1 = (ImageView) findViewById(R.id.icon2_group1);
+        icon3_group1 = (ImageView) findViewById(R.id.icon3_group1);
+        btn1_group1 = (Button) findViewById(R.id.btn1_group1);
+        btn2_group1 = (Button) findViewById(R.id.btn2_group1);
+        btn3_group1 = (Button) findViewById(R.id.btn3_group1);
+        btn1_group4 = (Button) findViewById(R.id.btn1_group4);
+        btn2_group4 = (Button) findViewById(R.id.btn2_group4);
+        btn3_group4 = (Button) findViewById(R.id.btn3_group4);
+        btn4_group4 = (Button) findViewById(R.id.btn4_group4);
+        btn5_group4 = (Button) findViewById(R.id.btn5_group4);
 
         btn1_group1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +71,31 @@ public class LesSon1 extends Activity{
         btn1_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                createDialog1();
+            }
+        });
+        btn2_group4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog2();
+            }
+        });
+        btn3_group4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog3();
+            }
+        });
+        btn4_group4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog4();
+            }
+        });
+        btn5_group4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createDialog5();
             }
         });
 
@@ -82,6 +112,7 @@ public class LesSon1 extends Activity{
         startCrop.putExtra("return-data", true);
         startActivityForResult(startCrop, 1);
     }
+
     public void PickImage2() {
         Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
@@ -92,6 +123,7 @@ public class LesSon1 extends Activity{
         startCrop.putExtra("return-data", true);
         startActivityForResult(startCrop, 2);
     }
+
     public void PickImage3() {
         Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
@@ -104,12 +136,12 @@ public class LesSon1 extends Activity{
     }
 
     @Override
-    protected void onActivityResult(int requestCode,int resultCode, Intent data) {
-        if(data != null) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (data != null) {
             Bundle extras = data.getExtras();
             Bitmap tempBitmap = extras.getParcelable("data");
 
-            if (requestCode == 1 && resultCode == RESULT_OK ) {
+            if (requestCode == 1 && resultCode == RESULT_OK) {
                 icon1_group1.setImageBitmap(tempBitmap);
                 icon1_group1.setVisibility(View.VISIBLE);
                 btn1_group1.setVisibility(View.GONE);
@@ -127,22 +159,138 @@ public class LesSon1 extends Activity{
             } else {
 
             }
-        }else {
+        } else {
             //Do not thing when user cancel
         }
 
     }
 
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("asd")
-                .setItems(R.array.group4choice, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // The 'which' argument contains the index position
-                        // of the selected item
+    final String[] answer4 = new String[]{
+            "ภาษาระดับกันเอง",
+            "ภาษาระดับไม่เป็นทางการ",
+            "ภาษาระดับกึ่งทางการ",
+            "ภาษาระดับทางการ",
+            "ภาษาระดับพิธีการ"
+    };
+
+    public void createDialog1() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
+        builder.setItems(
+                answer4,
+                new DialogInterface.OnClickListener() // Item click listener
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selectedItem = Arrays.asList(answer4).get(i);
+                        if (selectedItem != "ภาษาระดับกันเอง") {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
+                            btn1_group4.setText(selectedItem);
+                        }
                     }
                 });
-        return builder.create();
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void createDialog2() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
+        builder.setItems(
+                answer4,
+                new DialogInterface.OnClickListener() // Item click listener
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selectedItem = Arrays.asList(answer4).get(i);
+                        if (selectedItem != "ภาษาระดับไม่เป็นทางการ") {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
+                            btn2_group4.setText(selectedItem);
+                        }
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void createDialog3() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
+        builder.setItems(
+                answer4,
+                new DialogInterface.OnClickListener() // Item click listener
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selectedItem = Arrays.asList(answer4).get(i);
+                        if (selectedItem != "ภาษาระดับกึ่งทางการ") {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
+                            btn3_group4.setText(selectedItem);
+                        }
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void createDialog4() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
+        builder.setItems(
+                answer4,
+                new DialogInterface.OnClickListener() // Item click listener
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selectedItem = Arrays.asList(answer4).get(i);
+                        if (selectedItem != "ภาษาระดับทางการ") {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
+                            btn4_group4.setText(selectedItem);
+                        }
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void createDialog5() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
+        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
+        builder.setItems(
+                answer4,
+                new DialogInterface.OnClickListener() // Item click listener
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String selectedItem = Arrays.asList(answer4).get(i);
+                        if (selectedItem != "ภาษาระดับพิธีการ") {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
+                            btn5_group4.setText(selectedItem);
+                        }
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }

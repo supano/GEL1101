@@ -15,17 +15,17 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_height="40dp">
 
                     <ImageView
                         android:id="@+id/ribbon"
                         android:layout_width="wrap_content"
-                        android:layout_height="50dp"
+                        android:layout_height="45dp"
                         android:src="@drawable/ribbon" />
                 </LinearLayout>
 
@@ -33,13 +33,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="#000000"
+                android:layout_height="133dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="140dp"
                     android:layout_weight="2"
                     android:background="#70C1B3"
                     android:orientation="vertical">
@@ -52,13 +51,13 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/first_rib" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -67,16 +66,16 @@
                                 android:gravity="center"
                                 android:text="การเขียนผ่านตัวอักษร"
                                 android:textColor="#ffffff"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
 
                             <Button
                                 android:id="@+id/btn1_group1"
                                 android:layout_width="70dp"
-                                android:layout_height="40dp"
-                                android:padding="10dp"
-                                android:textSize="13dp"
+                                android:layout_height="30dp"
                                 android:layout_marginLeft="20dp"
-                                android:text="เลือกรูป" />
+                                android:padding="10dp"
+                                android:text="เลือกรูป"
+                                android:textSize="8dp" />
 
                             <ImageView
                                 android:id="@+id/icon1_group1"
@@ -88,17 +87,17 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal">
 
                             <Button
                                 android:id="@+id/btn2_group1"
                                 android:layout_width="70dp"
-                                android:layout_height="40dp"
-                                android:padding="10dp"
-                                android:textSize="13dp"
+                                android:layout_height="30dp"
                                 android:layout_marginRight="20dp"
-                                android:text="เลือกรูป" />
+                                android:padding="10dp"
+                                android:text="เลือกรูป"
+                                android:textSize="8dp" />
 
                             <ImageView
                                 android:id="@+id/icon2_group1"
@@ -112,13 +111,13 @@
                                 android:gravity="center"
                                 android:text="การพูดผ่านภาษาพูด"
                                 android:textColor="#ffffff"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -127,16 +126,16 @@
                                 android:gravity="center"
                                 android:text="การเขียนผ่านตัวอักษร"
                                 android:textColor="#ffffff"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
 
                             <Button
                                 android:id="@+id/btn3_group1"
                                 android:layout_width="70dp"
-                                android:layout_height="40dp"
-                                android:padding="10dp"
-                                android:textSize="13dp"
+                                android:layout_height="30dp"
                                 android:layout_marginLeft="20dp"
-                                android:text="เลือกรูป" />
+                                android:padding="10dp"
+                                android:text="เลือกรูป"
+                                android:textSize="8dp" />
 
                             <ImageView
                                 android:id="@+id/icon3_group1"
@@ -152,10 +151,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="140dp"
                     android:layout_weight="2"
-                    android:background="#B271BF"
-                    android:padding="10dp">
+                    android:background="#B271BF">
 
                     <LinearLayout
 
@@ -165,12 +163,12 @@
 
                         <ImageView
                             android:layout_width="match_parent"
-                            android:layout_height="45dp"
+                            android:layout_height="35dp"
                             android:src="@drawable/second_rib" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal"
                             android:paddingLeft="100dp">
 
@@ -180,19 +178,19 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="1. วิเคราะห์"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:layout_width="200dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="5dp"
-                                android:paddingTop="5dp"
-                                android:textSize="16dp" />
+                                android:paddingTop="3dp"
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal"
                             android:paddingLeft="100dp">
 
@@ -201,19 +199,19 @@
                                 android:layout_height="match_parent"
                                 android:gravity="center"
                                 android:text="2. วิเคราะห์"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
 
                             <EditText
                                 android:layout_width="200dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="5dp"
-                                android:paddingTop="5dp"
-                                android:textSize="16dp" />
+                                android:paddingTop="3dp"
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal"
                             android:paddingLeft="100dp">
 
@@ -222,7 +220,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center_horizontal"
                                 android:text="3. วิเคราะห์โอกาสในการสื่อสาร เช่น การเป็นพิธีกร"
-                                android:textSize="16dp" />
+                                android:textSize="13dp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -232,7 +230,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="200dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -244,80 +242,127 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/third_rib" />
 
-                    <LinearLayout
+                    <TableLayout
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/icon1group3" />
-                    </LinearLayout>
+                        <TableRow android:layout_width="match_parent">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:background="@drawable/icon1group3"
+                                android:gravity="center" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon1group3" />
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="200dp"
                     android:layout_weight="2"
                     android:background="#DB3B65"
                     android:orientation="vertical"
                     android:paddingLeft="10dp">
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:src="@drawable/fourth_rib" />
+                        android:layout_height="30dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:src="@drawable/fourth_rib" />
+
+                    </LinearLayout>
 
                     <LinearLayout
+                        android:paddingLeft="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:layout_width="20dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="125dp"
                             android:src="@drawable/arrow1" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="130dp"
                             android:orientation="vertical"
-                            android:paddingRight="20dp">
+                            android:paddingRight="0dp">
 
                             <Button
                                 android:id="@+id/btn1_group4"
-                                android:layout_width="250dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="30dp"
-                                android:background="#ffffff" />
+                                android:layout_width="100dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#ffffff"
+                                android:gravity="left"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="3dp"
+                                android:textSize="10dp" />
 
                             <Button
-                                android:layout_width="300dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="5dp"
-                                android:background="#ffffff" />
+                                android:id="@+id/btn2_group4"
+                                android:layout_width="120dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="2dp"
+                                android:background="#ffffff"
+                                android:gravity="left"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="3dp"
+                                android:textSize="10dp" />
 
                             <Button
-                                android:layout_width="350dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="5dp"
-                                android:background="#ffffff" />
+                                android:id="@+id/btn3_group4"
+                                android:layout_width="140dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="2dp"
+                                android:background="#ffffff"
+                                android:gravity="left"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="3dp"
+                                android:textSize="10dp" />
 
                             <Button
-                                android:layout_width="400dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="5dp"
-                                android:background="#ffffff" />
+                                android:id="@+id/btn4_group4"
+                                android:layout_width="160dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="2dp"
+                                android:background="#ffffff"
+                                android:gravity="left"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="3dp"
+                                android:textSize="10dp" />
 
                             <Button
-                                android:layout_width="450dp"
-                                android:layout_height="30dp"
-                                android:layout_marginTop="5dp"
-                                android:background="#ffffff" />
+                                android:id="@+id/btn5_group4"
+                                android:layout_width="180dp"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="2dp"
+                                android:background="#ffffff"
+                                android:gravity="left"
+                                android:paddingLeft="5dp"
+                                android:paddingTop="3dp"
+                                android:textSize="10dp" />
 
+                            <ImageView
+                                android:layout_marginLeft="-50dp"
+                                android:src="@drawable/arrow2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
