@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -22,10 +23,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -152,6 +155,10 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         if (data != null) {
             Bundle extras = data.getExtras();
             Bitmap tempBitmap = extras.getParcelable("data");
+            //Uri selectedImageURI = data.getData();
+            //String imageFilename = getRealPathFromURI(selectedImageURI);
+            //Toast.makeText(LesSon1.this,selectedImageURI.toString(),Toast.LENGTH_LONG).show();
+
 
             if (requestCode == 1 && resultCode == RESULT_OK) {
                 icon1_group1.setImageBitmap(tempBitmap);
@@ -305,12 +312,21 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         dialog.show();
     }
 
-    public static final String IMAGE_URL = "https://api.learn2crack.com/android/images/donut.png";
     public void createDialog6() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
         final EditText input = new EditText(this);
         builder.setTitle("ใส่ Link รูปภาพ");
         builder.setView(input);
+        builder.setNeutralButton("How to",new AlertDialog.OnClickListener() {
+
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent goTohowto = new Intent(LesSon1.this,Howto.class);
+                startActivity(goTohowto);
+            }
+        });
+
         builder.setPositiveButton("OK", new AlertDialog.OnClickListener() {
 
 
@@ -337,5 +353,18 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
     @Override
     public void onError() {
 
+    }
+    private String getRealPathFromURI(Uri contentURI) {
+        String result;
+        Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
+        if (cursor == null) { // Source is Dropbox or other similar local file path
+            result = contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            result = cursor.getString(idx);
+            cursor.close();
+        }
+        return result;
     }
 }
