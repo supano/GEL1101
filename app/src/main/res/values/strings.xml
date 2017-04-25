@@ -8,5 +8,5 @@
         <item>ภาษาระดับทางการ</item>
         <item>ภาษาระดับพิธีการ</item>
     </string-array>
-
+    <string name="text_size">16dp</string>
 </resources>

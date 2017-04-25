@@ -56,7 +56,7 @@ public class LesSon1 extends Activity{
                 PickImage2();
             }
         });
-        btn2_group1.setOnClickListener(new View.OnClickListener() {
+        btn3_group1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PickImage3();
@@ -65,9 +65,10 @@ public class LesSon1 extends Activity{
         btn1_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String asdasd = onCreateDialog(savedInstanceState);
+
             }
         });
+
 
     }
 
@@ -143,4 +144,5 @@ public class LesSon1 extends Activity{
                 });
         return builder.create();
     }
+
 }
