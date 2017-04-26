@@ -9,15 +9,20 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.Typeface;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,8 +41,9 @@ import java.util.Arrays;
 
 
 public class LesSon1 extends Activity implements LoadImageTask.Listener {
-    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3;
-    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3;
+    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3,icon1_group2,icon2_group2;
+    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3,btn1_group2,btn2_group2;
+    EditText edt1_group2,edt2_group2;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         icon1_group1 = (ImageView) findViewById(R.id.icon1_group1);
         icon2_group1 = (ImageView) findViewById(R.id.icon2_group1);
         icon3_group1 = (ImageView) findViewById(R.id.icon3_group1);
+        icon1_group2 = (ImageView) findViewById(R.id.icon1_group2);
+        icon2_group2 = (ImageView) findViewById(R.id.icon2_group2);
         img1_group3 = (ImageView) findViewById(R.id.img1_group3);
         //button
         btn1_group1 = (Button) findViewById(R.id.btn1_group1);
@@ -59,6 +67,13 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         btn4_group4 = (Button) findViewById(R.id.btn4_group4);
         btn5_group4 = (Button) findViewById(R.id.btn5_group4);
         btn1_group3 = (Button) findViewById(R.id.btn1_group3);
+        btn1_group2 = (Button) findViewById(R.id.btn1_group2);
+        btn2_group2 = (Button) findViewById(R.id.btn2_group2);
+        //edit text
+        edt1_group2 = (EditText) findViewById(R.id.edt1_group2);
+        edt2_group2 = (EditText) findViewById(R.id.edt2_group2);
+
+
 
         btn1_group1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +129,30 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                 createDialog6();
             }
         });
-
+        btn1_group2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edt1_group2.getText().toString().equals("จุดประสงค์ในการสื่อสาร")){
+                    Toast.makeText(LesSon1.this,"คุณตอบถูก",Toast.LENGTH_LONG).show();
+                    icon1_group2.setVisibility(View.VISIBLE);
+                    btn1_group2.setVisibility(View.GONE);
+                }else {
+                    Toast.makeText(LesSon1.this,"คุณตอบผิด",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        btn2_group2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edt2_group2.getText().toString().equals("ผู้รับสารเพื่อเลือกใช้ภาษา")){
+                    Toast.makeText(LesSon1.this,"คุณตอบถูก",Toast.LENGTH_LONG).show();
+                    icon2_group2.setVisibility(View.VISIBLE);
+                    btn2_group2.setVisibility(View.GONE);
+                }else {
+                    Toast.makeText(LesSon1.this,"คุณตอบผิด",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void PickImage1() {
@@ -155,15 +193,12 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         if (data != null) {
             Bundle extras = data.getExtras();
             Bitmap tempBitmap = extras.getParcelable("data");
-            //Uri selectedImageURI = data.getData();
-            //String imageFilename = getRealPathFromURI(selectedImageURI);
-            //Toast.makeText(LesSon1.this,selectedImageURI.toString(),Toast.LENGTH_LONG).show();
-
 
             if (requestCode == 1 && resultCode == RESULT_OK) {
                 icon1_group1.setImageBitmap(tempBitmap);
                 icon1_group1.setVisibility(View.VISIBLE);
                 btn1_group1.setVisibility(View.GONE);
+
 
             } else if (requestCode == 2 && resultCode == RESULT_OK) {
                 icon2_group1.setImageBitmap(tempBitmap);
