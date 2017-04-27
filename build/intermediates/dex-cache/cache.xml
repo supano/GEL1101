@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.gradle\caches\modules-2\files-2.1\com.alexvasilkov\gesture-views\2.3.0\8e918e15776e9eeb5ca2a7bfd5e610a905bdc001\gesture-views-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8e918e15776e9eeb5ca2a7bfd5e610a905bdc001">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\gesture-views-2.3.0_c2c5fdb9ee5ff4f1fbe96a04346a11ce97763d5a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.1\constraint-layout-solver-1.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1ad79631209e77b0a2730fc112b4cc0c66a95132">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.1_b7bbf2671d93e1ed1d1c65909eb9998c575983d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\81bbbe4439bc07e3b7a11a4f89b6596778887a53\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_50e3641789768a2f3049ca67272647f6a7577f30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_797159a57611478b18e2d314c9ae1f9488e4524e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\98ea85b8824a437b90a421bd05fcefdea3151f2e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_69b3ac3097cb1a36244a1ad1373a87afb835b7c5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\0a04b4db957ae8b9f7590b097962763f5df0bbca\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_41b0286a3063d5d64179f0fd50488215c6003a1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\96716f5f3681909b96af5e07187a239334169082\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_0f784d7d780dbcce179bcccdb6ab780a40dd09de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\9a39d3be121c22f4ce287e5ef88375e0311ac4d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_06f2be07e7f92417fafb2373f1fcb06fb6d26fff.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="079faa5397a8357e682108868913ac34dd063abc">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_43ddd0e3129ffe33e7b8d610d73404ee029f41c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_aa3014ef4acae459b85fb06f02c963f44eb17f0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\ddda33fc16a5dc00895be56a739353bfefa972b4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_40948b1037bd0cf9dba236e097edc3ba8b137fd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\c63e5652259952477f7d3e6c835c7cfb546b234e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="183fcbfcca75b095b63125f5e31ebd8b5f5f3216">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_14007a431d6372820886c470d01e28c56b63eb04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\0e823246c14bb64b9fb6af6ef49a044f4623c3fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_eefb6736e02db9c504cff16d1c98b8c71ef06136.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\ccdb0dd9ce88d6aaf29c3a097dd29952f119699a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7113302c965566b66df46c6ca75ea301576114a5">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_3eff45596d14dbb09458ec5b2e97be442eb8e754.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\3888ec257adfd5a5f16b66fbc7a71582b2696229\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_9e0c2b0b7cf2a7b8fb1ed5c38c4dce6c77712dc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\4c58909f68a5cc6b57a9bc4903b6fd656a0367e8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_9ae202ffa6ffbf2da0baa8433f09ed39af03de8a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\8002dfb2c3e40792b95f1517710317c2450687ff\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_02e85a4792d5190b81517d286238cb5e7d75dbcb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\3f4460f08c9cb1bcc7705177f07c006477456352\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_bbdde5c9e1c99df8426b05c4b4ecd7c083b14162.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\92cff82f6e3c4f187cf9345712761775f607fa1f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_597aaaea411a1b1a7dbd0ecc668d618286244098.jar" />
+    </item>
+
+</items>
