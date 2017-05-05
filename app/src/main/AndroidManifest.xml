@@ -15,13 +15,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        /activity>
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LesSon1"
             android:screenOrientation="landscape"/>
         <activity android:name=".LesSon1_1"
             android:screenOrientation="landscape"/>
-        <activity android:name=".Howto" />
+        <activity android:name=".Howto"
+            android:theme="@style/AppTheme"/>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>

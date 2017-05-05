@@ -78,19 +78,19 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         btn1_group1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PickImage1();
+                PickImage(1);
             }
         });
         btn2_group1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PickImage2();
+                PickImage(2);
             }
         });
         btn3_group1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PickImage3();
+                PickImage(3);
             }
         });
         btn1_group4.setOnClickListener(new View.OnClickListener() {
@@ -155,7 +155,7 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         });
     }
 
-    public void PickImage1() {
+    public void PickImage(int whatButton) {
         Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
         startCrop.putExtra("aspectX", 0);
@@ -163,29 +163,7 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         startCrop.putExtra("outputX", 0);
         startCrop.putExtra("outputY", 0);
         startCrop.putExtra("return-data", true);
-        startActivityForResult(startCrop, 1);
-    }
-
-    public void PickImage2() {
-        Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startCrop.putExtra("crop", "true");
-        startCrop.putExtra("aspectX", 0);
-        startCrop.putExtra("aspectY", 0);
-        startCrop.putExtra("outputX", 0);
-        startCrop.putExtra("outputY", 0);
-        startCrop.putExtra("return-data", true);
-        startActivityForResult(startCrop, 2);
-    }
-
-    public void PickImage3() {
-        Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startCrop.putExtra("crop", "true");
-        startCrop.putExtra("aspectX", 0);
-        startCrop.putExtra("aspectY", 0);
-        startCrop.putExtra("outputX", 0);
-        startCrop.putExtra("outputY", 0);
-        startCrop.putExtra("return-data", true);
-        startActivityForResult(startCrop, 3);
+        startActivityForResult(startCrop, whatButton);
     }
 
     @Override
