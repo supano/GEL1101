@@ -44,9 +44,9 @@ import java.util.Date;
 
 
 public class LesSon1 extends Activity implements LoadImageTask.Listener {
-    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3,icon1_group2,icon2_group2,img2_group3;
-    Button btn2_group3,btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3,btn1_group2,btn2_group2;
-    EditText edt1_group2,edt2_group2;
+    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3, icon1_group2, icon2_group2, img2_group3;
+    Button btn2_group3, btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4, btn1_group3, btn1_group2, btn2_group2;
+    EditText edt1_group2, edt2_group2;
     private static File Imageforsave;
     private Uri file;
 
@@ -81,7 +81,6 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         edt2_group2 = (EditText) findViewById(R.id.edt2_group2);
 
 
-
         btn1_group1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,31 +102,31 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         btn1_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog1();
+                createDialog(1);
             }
         });
         btn2_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog2();
+                createDialog(2);
             }
         });
         btn3_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog3();
+                createDialog(3);
             }
         });
         btn4_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog4();
+                createDialog(4);
             }
         });
         btn5_group4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createDialog5();
+                createDialog(5);
             }
         });
         btn1_group3.setOnClickListener(new View.OnClickListener() {
@@ -139,31 +138,31 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         btn1_group2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edt1_group2.getText().toString().equals("จุดประสงค์ในการสื่อสาร")){
-                    Toast.makeText(LesSon1.this,"คุณตอบถูก",Toast.LENGTH_LONG).show();
+                if (edt1_group2.getText().toString().equals("จุดประสงค์ในการสื่อสาร")) {
+                    Toast.makeText(LesSon1.this, "คุณตอบถูก", Toast.LENGTH_LONG).show();
                     icon1_group2.setVisibility(View.VISIBLE);
                     btn1_group2.setVisibility(View.GONE);
-                }else {
-                    Toast.makeText(LesSon1.this,"คุณตอบผิด",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LesSon1.this, "คุณตอบผิด", Toast.LENGTH_LONG).show();
                 }
             }
         });
         btn2_group2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edt2_group2.getText().toString().equals("ผู้รับสารเพื่อเลือกใช้ภาษา")){
-                    Toast.makeText(LesSon1.this,"คุณตอบถูก",Toast.LENGTH_LONG).show();
+                if (edt2_group2.getText().toString().equals("ผู้รับสารเพื่อเลือกใช้ภาษา")) {
+                    Toast.makeText(LesSon1.this, "คุณตอบถูก", Toast.LENGTH_LONG).show();
                     icon2_group2.setVisibility(View.VISIBLE);
                     btn2_group2.setVisibility(View.GONE);
-                }else {
-                    Toast.makeText(LesSon1.this,"คุณตอบผิด",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LesSon1.this, "คุณตอบผิด", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
     public void PickImage(int whatButton) {
-        Intent startCrop = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        Intent startCrop = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
         startCrop.putExtra("aspectX", 0);
         startCrop.putExtra("aspectY", 0);
@@ -205,7 +204,6 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                 icon1_group1.setVisibility(View.VISIBLE);
                 btn1_group1.setVisibility(View.GONE);
 
-
             } else if (requestCode == 2 && resultCode == RESULT_OK) {
                 icon2_group1.setImageBitmap(tempBitmap);
                 icon2_group1.setVisibility(View.VISIBLE);
@@ -218,18 +216,18 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
 
             } else if (requestCode == 22 && resultCode == RESULT_OK) {
                 img2_group3.setImageBitmap(tempBitmap);
-                Toast.makeText(this,"Take Photo is ok",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Take Photo is ok", Toast.LENGTH_LONG).show();
 
-            }else {
-                Toast.makeText(this,"Take Photo is not ok",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Take Photo is not ok", Toast.LENGTH_LONG).show();
             }
 
-        } else if (Imageforsave!=null){
+        } else if (Imageforsave != null) {
             Bitmap tempbit2 = BitmapFactory.decodeFile(String.valueOf(Imageforsave));
             img2_group3.setImageBitmap(tempbit2);
-        }else {
+        } else {
             //Do not thing when user cancel
-            Toast.makeText(this,"Take Photo is not ok 2",Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Take Photo is not ok 2", Toast.LENGTH_LONG).show();
         }
 
     }
@@ -242,7 +240,8 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
             "ภาษาระดับพิธีการ"
     };
 
-    public void createDialog1() {
+    public void createDialog(int whatBtn) {
+        final int WhaBTN1 = whatBtn;
         final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
         builder.setTitle("เลือกคำตอบที่ถูกต้อง");
         builder.setItems(
@@ -252,108 +251,23 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String selectedItem = Arrays.asList(answer4).get(i);
-                        if (selectedItem != "ภาษาระดับกันเอง") {
-                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
-
-                        } else {
+                        if (selectedItem == "ภาษาระดับกันเอง" && WhaBTN1 == 1) {
                             Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
                             btn1_group4.setText(selectedItem);
-                        }
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    public void createDialog2() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
-        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
-        builder.setItems(
-                answer4,
-                new DialogInterface.OnClickListener() // Item click listener
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String selectedItem = Arrays.asList(answer4).get(i);
-                        if (selectedItem != "ภาษาระดับไม่เป็นทางการ") {
-                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
-
-                        } else {
+                        } else if (selectedItem == "ภาษาระดับไม่เป็นทางการ" && WhaBTN1 == 2) {
                             Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
                             btn2_group4.setText(selectedItem);
-                        }
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    public void createDialog3() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
-        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
-        builder.setItems(
-                answer4,
-                new DialogInterface.OnClickListener() // Item click listener
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String selectedItem = Arrays.asList(answer4).get(i);
-                        if (selectedItem != "ภาษาระดับกึ่งทางการ") {
-                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
-
-                        } else {
+                        } else if (selectedItem == "ภาษาระดับกึ่งทางการ" && WhaBTN1 == 3) {
                             Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
                             btn3_group4.setText(selectedItem);
-                        }
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    public void createDialog4() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
-        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
-        builder.setItems(
-                answer4,
-                new DialogInterface.OnClickListener() // Item click listener
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String selectedItem = Arrays.asList(answer4).get(i);
-                        if (selectedItem != "ภาษาระดับทางการ") {
-                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
-
-                        } else {
+                        } else if (selectedItem == "ภาษาระดับทางการ" && WhaBTN1 == 4) {
                             Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
                             btn4_group4.setText(selectedItem);
-                        }
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    public void createDialog5() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
-        builder.setTitle("เลือกคำตอบที่ถูกต้อง");
-        builder.setItems(
-                answer4,
-                new DialogInterface.OnClickListener() // Item click listener
-                {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String selectedItem = Arrays.asList(answer4).get(i);
-                        if (selectedItem != "ภาษาระดับพิธีการ") {
-                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
-
-                        } else {
+                        } else if (selectedItem == "ภาษาระดับพิธีการ" && WhaBTN1 == 5) {
                             Toast.makeText(LesSon1.this, "ถูกต้อง", Toast.LENGTH_SHORT).show();
                             btn5_group4.setText(selectedItem);
+                        } else {
+                            Toast.makeText(LesSon1.this, "คุณเลือกผิด", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -361,18 +275,19 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 
     public void createDialog6() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
         final EditText input = new EditText(this);
         builder.setTitle("ใส่ Link รูปภาพ");
         builder.setView(input);
-        builder.setNeutralButton("How to",new AlertDialog.OnClickListener() {
+        builder.setNeutralButton("How to", new AlertDialog.OnClickListener() {
 
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent goTohowto = new Intent(LesSon1.this,Howto.class);
+                Intent goTohowto = new Intent(LesSon1.this, Howto.class);
                 startActivity(goTohowto);
             }
         });
