@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f548a0caf41138ae09258c2c8472f603a6ffbc58">
+        sha1="67b9beb71cc7f41357a222b5ef3790913eaa38d1">
         <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_43ddd0e3129ffe33e7b8d610d73404ee029f41c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.android\build-cache\b4f07cfa5fe30a0e2eb688e253542e82a8e509d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_7c3f58af326087a9bae230181f9f69ce6a365654.jar" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +27,15 @@
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_aa3014ef4acae459b85fb06f02c963f44eb17f0c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_8061c3c37418e00acf09c9b0024c9e77b534a5dd.jar" />
     </item>
 
 </items>

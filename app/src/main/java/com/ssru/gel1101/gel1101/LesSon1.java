@@ -18,6 +18,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -37,13 +38,17 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 
 public class LesSon1 extends Activity implements LoadImageTask.Listener {
-    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3,icon1_group2,icon2_group2;
-    Button btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3,btn1_group2,btn2_group2;
+    ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3,icon1_group2,icon2_group2,img2_group3;
+    Button btn2_group3,btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4,btn1_group3,btn1_group2,btn2_group2;
     EditText edt1_group2,edt2_group2;
+    private static File Imageforsave;
+    private Uri file;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -67,8 +72,10 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         btn4_group4 = (Button) findViewById(R.id.btn4_group4);
         btn5_group4 = (Button) findViewById(R.id.btn5_group4);
         btn1_group3 = (Button) findViewById(R.id.btn1_group3);
+        img2_group3 = (ImageView) findViewById(R.id.img2_group3);
         btn1_group2 = (Button) findViewById(R.id.btn1_group2);
         btn2_group2 = (Button) findViewById(R.id.btn2_group2);
+
         //edit text
         edt1_group2 = (EditText) findViewById(R.id.edt1_group2);
         edt2_group2 = (EditText) findViewById(R.id.edt2_group2);
@@ -166,6 +173,27 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         startActivityForResult(startCrop, whatButton);
     }
 
+
+    public void openCamera(View view) {
+        try {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            file = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".provider", getOutputMediaFile());
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, file);
+            startActivityForResult(intent, 22);
+        } catch (Exception e) {
+            Log.d("error_camera", String.valueOf(e));
+        }
+    }
+
+    private static File getOutputMediaFile() {
+        File mediaStorageDir = new File(Environment.getExternalStorageDirectory() + "/GEL1101/Image");
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        Imageforsave = new File(mediaStorageDir.getPath() + File.separator +
+                "IMG_" + timeStamp + ".jpg");
+        return Imageforsave;
+    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data != null) {
@@ -188,11 +216,20 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                 icon3_group1.setVisibility(View.VISIBLE);
                 btn3_group1.setVisibility(View.GONE);
 
-            } else {
+            } else if (requestCode == 22 && resultCode == RESULT_OK) {
+                img2_group3.setImageBitmap(tempBitmap);
+                Toast.makeText(this,"Take Photo is ok",Toast.LENGTH_LONG).show();
 
+            }else {
+                Toast.makeText(this,"Take Photo is not ok",Toast.LENGTH_LONG).show();
             }
-        } else {
+
+        } else if (Imageforsave!=null){
+            Bitmap tempbit2 = BitmapFactory.decodeFile(String.valueOf(Imageforsave));
+            img2_group3.setImageBitmap(tempbit2);
+        }else {
             //Do not thing when user cancel
+            Toast.makeText(this,"Take Photo is not ok 2",Toast.LENGTH_LONG).show();
         }
 
     }
@@ -353,7 +390,6 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
 
 
     @Override

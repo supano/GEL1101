@@ -58,8 +58,8 @@ public class SplashScreen extends Activity {
     @TargetApi(Build.VERSION_CODES.M)
     public void RequestPermissionAndroid6() {
         requestPermissions(new String[]{
-                        Manifest.permission.INTERNET,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA},
                 ASK_MULTIPLE_PERMISSION_REQUEST_CODE);
     }
 
