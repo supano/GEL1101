@@ -22,6 +22,9 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".Howto"
             android:theme="@style/AppTheme"/>
+        <activity android:name=".WebActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.CustomTheme"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"

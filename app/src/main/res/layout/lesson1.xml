@@ -29,7 +29,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_weight="3"
-                        android:src="@drawable/ribbon_head9" />
+                        android:src="@drawable/ribbon_head10" />
 
                 </LinearLayout>
 
@@ -301,7 +301,8 @@
                                 android:text="ใส่ลิ้ง"
                                 android:background="#ffffff"
                                 android:textSize="8dp"
-                                android:layout_gravity="center"/>
+                                android:layout_gravity="center"
+                                android:onClick="popUpwebview"/>
 
                             <ImageView
                                 android:id="@+id/img1_group3"

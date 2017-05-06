@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="67b9beb71cc7f41357a222b5ef3790913eaa38d1">
+        sha1="056a7b38c76e9849f7396c73796153c43a79d458">
         <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_43ddd0e3129ffe33e7b8d610d73404ee029f41c3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\supan\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\glide-3.7.0_0be824abe55fcd3511b939344264c4af3ceb5c87.jar" />
     </item>
     <item
         is-multidex="false"

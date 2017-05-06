@@ -18,6 +18,9 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.text.Editable;
@@ -25,6 +28,9 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -32,6 +38,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
 
 import java.io.File;
@@ -43,7 +50,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 
-public class LesSon1 extends Activity implements LoadImageTask.Listener {
+public class LesSon1 extends Activity {
     ImageView icon1_group1, icon2_group1, icon3_group1, img1_group3, icon1_group2, icon2_group2, img2_group3;
     Button btn2_group3, btn1_group1, btn2_group1, btn3_group1, btn1_group4, btn2_group4, btn3_group4, btn4_group4, btn5_group4, btn1_group3, btn1_group2, btn2_group2;
     EditText edt1_group2, edt2_group2;
@@ -129,12 +136,6 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                 createDialog(5);
             }
         });
-        btn1_group3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                createDialog6();
-            }
-        });
         btn1_group2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,6 +160,8 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
                 }
             }
         });
+
+
     }
 
     public void PickImage(int whatButton) {
@@ -225,20 +228,18 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         } else if (Imageforsave != null) {
             Bitmap tempbit2 = BitmapFactory.decodeFile(String.valueOf(Imageforsave));
             img2_group3.setImageBitmap(tempbit2);
-        } else {
+        } else if (requestCode == 55 ){
+            Glide.with(LesSon1.this).load(Data.imageforshow).into(img1_group3);
+            img1_group3.setVisibility(View.VISIBLE);
+            btn1_group3.setVisibility(View.GONE);
+        }else {
             //Do not thing when user cancel
             Toast.makeText(this, "Take Photo is not ok 2", Toast.LENGTH_LONG).show();
         }
 
     }
 
-    final String[] answer4 = new String[]{
-            "ภาษาระดับกันเอง",
-            "ภาษาระดับไม่เป็นทางการ",
-            "ภาษาระดับกึ่งทางการ",
-            "ภาษาระดับทางการ",
-            "ภาษาระดับพิธีการ"
-    };
+    final String[] answer4 = new String[]{"ภาษาระดับกันเอง", "ภาษาระดับไม่เป็นทางการ", "ภาษาระดับกึ่งทางการ", "ภาษาระดับทางการ", "ภาษาระดับพิธีการ"};
 
     public void createDialog(int whatBtn) {
         final int WhaBTN1 = whatBtn;
@@ -277,7 +278,7 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
     }
 
 
-    public void createDialog6() {
+    public void createDialog2() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
         final EditText input = new EditText(this);
         builder.setTitle("ใส่ Link รูปภาพ");
@@ -293,30 +294,21 @@ public class LesSon1 extends Activity implements LoadImageTask.Listener {
         });
 
         builder.setPositiveButton("OK", new AlertDialog.OnClickListener() {
-
-
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String value = input.getText().toString();
-                new LoadImageTask(LesSon1.this).execute(value);
+                //new LoadImageTask(LesSon1.this).execute(value);
             }
         });
 
         AlertDialog dialog = builder.create();
         dialog.show();
     }
-
-
-    @Override
-    public void onImageLoaded(Bitmap bitmap) {
-        img1_group3.setImageBitmap(bitmap);
-        img1_group3.setVisibility(View.VISIBLE);
-        btn1_group3.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onError() {
+    public void popUpwebview(View view) {
+        Intent intent = new Intent(LesSon1.this,WebActivity.class);
+        startActivityForResult(intent,55);
 
     }
+
 
 }
