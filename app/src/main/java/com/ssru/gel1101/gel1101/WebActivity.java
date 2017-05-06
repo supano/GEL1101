@@ -13,7 +13,7 @@ import android.widget.Button;
 
 
 public class WebActivity extends Activity {
-    Button okbtn, backbtn;
+    Button okbtn, canclebtn;
     WebView myWebView;
 
 
@@ -27,18 +27,23 @@ public class WebActivity extends Activity {
 
         int layout_width = dm.widthPixels;
         int layout_height = dm.heightPixels;
-        getWindow().setLayout((int) (layout_width), (int) (layout_height));
+        getWindow().setLayout((int) (layout_width*.9), (int) (layout_height*.85));
 
+        // ตั้งค่า Browser
         myWebView = (WebView) findViewById(R.id.webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
+        myWebView.getSettings().setBuiltInZoomControls(true);
+        myWebView.getSettings().setDisplayZoomControls(false);
         String newUA= "Mozilla/5.0 (masking-agent; rv:14.0) Gecko/20100101 Firefox/14.0.1";
         myWebView.getSettings().setUserAgentString(newUA);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://www.google.co.th/");
+        myWebView.loadUrl("https://www.google.co.th/imghp?hl=th&tab=wi&ei=s5MJWab-C8bL0ATV1oeYDw&ved=0EKouCBIoAQ");
 
+        //Define button
         okbtn = (Button) findViewById(R.id.okbtn);
-        backbtn = (Button) findViewById(R.id.backbtn);
+        canclebtn = (Button) findViewById(R.id.canclebtn);
 
+        //ปุ่ม OK
         okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +53,8 @@ public class WebActivity extends Activity {
                 finish();
             }
         });
-        backbtn.setOnClickListener(new View.OnClickListener() {
+        //ปุ่ม Back
+        canclebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
