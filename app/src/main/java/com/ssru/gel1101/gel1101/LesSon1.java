@@ -136,6 +136,8 @@ public class LesSon1 extends Activity {
                 createDialog(5);
             }
         });
+
+        //เช็ดคำตอบ จากที่ User  กรอก
         btn1_group2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,6 +166,7 @@ public class LesSon1 extends Activity {
 
     }
 
+    //Code เลือกรูป
     public void PickImage(int whatButton) {
         Intent startCrop = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startCrop.putExtra("crop", "true");
@@ -175,7 +178,7 @@ public class LesSon1 extends Activity {
         startActivityForResult(startCrop, whatButton);
     }
 
-
+    // Code เปิดกล้อง
     public void openCamera(View view) {
         try {
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -186,7 +189,7 @@ public class LesSon1 extends Activity {
             Log.d("error_camera", String.valueOf(e));
         }
     }
-
+    //ตั้งชื่อรูป
     private static File getOutputMediaFile() {
         File mediaStorageDir = new File(Environment.getExternalStorageDirectory() + "/GEL1101/Image");
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -198,10 +201,12 @@ public class LesSon1 extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //เช็คว่าไม่มีอะไรผิด
         if (data != null) {
             Bundle extras = data.getExtras();
             Bitmap tempBitmap = extras.getParcelable("data");
 
+            //เช็คปุ่มที่กดมาว่าปุ่มใหน ต้องแสดงรูปตรงไหน
             if (requestCode == 1 && resultCode == RESULT_OK) {
                 icon1_group1.setImageBitmap(tempBitmap);
                 icon1_group1.setVisibility(View.VISIBLE);
@@ -226,9 +231,11 @@ public class LesSon1 extends Activity {
             }
 
         } else if (Imageforsave != null) {
+            // แสดงรูปจากที่ถ่ายมา
             Bitmap tempbit2 = BitmapFactory.decodeFile(String.valueOf(Imageforsave));
             img2_group3.setImageBitmap(tempbit2);
         } else if (requestCode == 55 ){
+            //แสดงรูปจากอิยเทอร์เน็ต
             Glide.with(LesSon1.this).load(Data.imageforshow).into(img1_group3);
             img1_group3.setVisibility(View.VISIBLE);
             btn1_group3.setVisibility(View.GONE);
@@ -239,8 +246,10 @@ public class LesSon1 extends Activity {
 
     }
 
+    //คำตอบที่ใช้ใน DropDown
     final String[] answer4 = new String[]{"ภาษาระดับกันเอง", "ภาษาระดับไม่เป็นทางการ", "ภาษาระดับกึ่งทางการ", "ภาษาระดับทางการ", "ภาษาระดับพิธีการ"};
 
+    // Drop Down
     public void createDialog(int whatBtn) {
         final int WhaBTN1 = whatBtn;
         final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
@@ -277,34 +286,9 @@ public class LesSon1 extends Activity {
         dialog.show();
     }
 
-
-    public void createDialog2() {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(LesSon1.this);
-        final EditText input = new EditText(this);
-        builder.setTitle("ใส่ Link รูปภาพ");
-        builder.setView(input);
-        builder.setNeutralButton("How to", new AlertDialog.OnClickListener() {
-
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent goTohowto = new Intent(LesSon1.this, Howto.class);
-                startActivity(goTohowto);
-            }
-        });
-
-        builder.setPositiveButton("OK", new AlertDialog.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String value = input.getText().toString();
-                //new LoadImageTask(LesSon1.this).execute(value);
-            }
-        });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+    //เปิด Browser หารูป
     public void popUpwebview(View view) {
+
         Intent intent = new Intent(LesSon1.this,WebActivity.class);
         startActivityForResult(intent,55);
 
