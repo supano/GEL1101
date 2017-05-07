@@ -7,17 +7,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="36fabba1a56f1b602f4fb162b266d14276655bdf">
+        sha1="e9fe0529c9a027b51df6bab97547ca9df8a5e91f">
         <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_43ddd0e3129ffe33e7b8d610d73404ee029f41c3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_aa3014ef4acae459b85fb06f02c963f44eb17f0c\classes.dex" />
     </item>
     <item
         is-multidex="false"
@@ -36,6 +27,15 @@
         revision="25.0.2"
         sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
         <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\pre-dexed\debug\classes_7c3f58af326087a9bae230181f9f69ce6a365654.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="D:\SourceCode\Android\Project\GEL1101\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_aa3014ef4acae459b85fb06f02c963f44eb17f0c\classes.dex" />
     </item>
     <item
         is-multidex="false"
