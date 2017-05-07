@@ -37,7 +37,7 @@ public class LesSon1 extends Activity {
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lesson1);
+        setContentView(R.layout.lesson1_layout);
 
         //image
         icon1_group1 = (ImageView) findViewById(R.id.icon1_group1);

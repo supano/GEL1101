@@ -77,14 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-        Button gotonew = (Button)findViewById(R.id.button5);
-        gotonew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,NewActivity.class);
-                startActivity(intent);
-            }
-        });
+
         final File file = assetToFile("worksheet/GEL1101_1.pdf");
         Button buttonIntent = (Button)findViewById(R.id.button3);
         buttonIntent.setOnClickListener(new View.OnClickListener() {

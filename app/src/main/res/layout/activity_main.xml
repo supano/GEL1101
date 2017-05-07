@@ -66,13 +66,7 @@
                 android:layout_weight="1"
                 android:drawableLeft="@drawable/icon_lable4"
                 android:text="ออกจากเกม" />
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="170dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:drawableLeft="@drawable/icon_lable4"
-                android:text="Gotonew" />
+
         </LinearLayout>
 
     </LinearLayout>
