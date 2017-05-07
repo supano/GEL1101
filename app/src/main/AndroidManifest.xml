@@ -26,8 +26,6 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".LesSon1_1"
             android:screenOrientation="landscape"/>
-        <activity android:name=".Howto"
-            android:theme="@style/AppTheme"/>
         <activity android:name=".WebActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.CustomTheme"/>
