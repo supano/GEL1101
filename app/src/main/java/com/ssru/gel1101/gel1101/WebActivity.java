@@ -26,14 +26,16 @@ public class WebActivity extends Activity {
 
         int layout_width = dm.widthPixels;
         int layout_height = dm.heightPixels;
-        getWindow().setLayout((int) (layout_width*.9), (int) (layout_height*.85));
+        getWindow().setLayout((int) (layout_width * .9), (int) (layout_height * .85));
 
         // ตั้งค่า Browser
         myWebView = (WebView) findViewById(R.id.webview);
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.getSettings().setBuiltInZoomControls(true);
         myWebView.getSettings().setDisplayZoomControls(false);
-        String newUA= "Mozilla/5.0 (masking-agent; rv:14.0) Gecko/20100101 Firefox/14.0.1";
+        myWebView.getSettings().setLoadWithOverviewMode(true);
+        myWebView.getSettings().setUseWideViewPort(true);
+        String newUA = "Mozilla/5.0 (masking-agent; rv:14.0) Gecko/20100101 Firefox/14.0.1";
         myWebView.getSettings().setUserAgentString(newUA);
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.loadUrl("https://www.google.co.th/imghp?hl=th&tab=wi&ei=s5MJWab-C8bL0ATV1oeYDw&ved=0EKouCBIoAQ");

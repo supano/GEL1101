@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ssru.gel1101.gel1101">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +28,8 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".Howto"
             android:theme="@style/AppTheme"/>
+        <activity android:name=".NewActivity"
+            android:screenOrientation="landscape"/>
         <activity android:name=".WebActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.CustomTheme"/>
@@ -35,9 +43,4 @@
                 android:resource="@xml/provider_paths"/>
         </provider>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera" />
 </manifest>
