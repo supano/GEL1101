@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-/**
- * Created by supan on 25/4/2560.
- */
 
 public class Howto extends Activity {
     @Override

@@ -1,7 +1,6 @@
 package com.ssru.gel1101.gel1101;
 
 import android.app.Activity;
-import android.hardware.display.DisplayManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
