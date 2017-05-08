@@ -207,11 +207,7 @@ public class LesSon1 extends Activity {
                 Toast.makeText(this, "Take Photo is not ok", Toast.LENGTH_LONG).show();
             }
 
-        } else if (Imageforsave != null) {
-            // แสดงรูปจากที่ถ่ายมา
-            Bitmap tempbit2 = BitmapFactory.decodeFile(String.valueOf(Imageforsave));
-            img2_group3.setImageBitmap(tempbit2);
-        } else if (requestCode == 55 ){
+        }  else if (requestCode == 55 ){
             //แสดงรูปจากอิยเทอร์เน็ต
             Glide.with(LesSon1.this).load(Data.imageforshow).into(img1_group3);
             img1_group3.setVisibility(View.VISIBLE);
